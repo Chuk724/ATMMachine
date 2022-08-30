@@ -1,7 +1,10 @@
 import java.util.*;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 
 public class ATM {
 	HashMap<Integer, Double> accounts;
+	NumberFormat formatter = new DecimalFormat("0.00");
 	public ATM () {
 		this.accounts = new HashMap<Integer, Double>();
 		
@@ -25,7 +28,7 @@ public class ATM {
 	public Double checkBalance (Integer accountID) {
 		Double balance = accounts.get(accountID);
 		if (accounts.containsKey(accountID)) {
-			return balance;
+			return Double.parseDouble(formatter.format(balance));
 		}
 		return 0.0;
 	}
