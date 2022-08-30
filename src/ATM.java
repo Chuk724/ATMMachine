@@ -40,7 +40,7 @@ public class ATM {
 	}
 	
 	public boolean withdrawMoney (Integer accountID, Double withdrawal) {
-		if (accounts.containsKey(accountID) && accounts.get(accountID) - withdrawal >= 0.0) {
+		if (accounts.containsKey(accountID) && accounts.get(accountID) - withdrawal >= 0.0 && withdrawal >= 0.0) {
 			accounts.put(accountID, accounts.get(accountID) - withdrawal);
 			return true;
 		}
