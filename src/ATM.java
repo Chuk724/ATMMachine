@@ -24,14 +24,14 @@ public class ATM {
 	
 	public Double checkBalance (Integer accountID) {
 		Double balance = accounts.get(accountID);
-		if (balance > 0) {
+		if (accounts.containsKey(accountID)) {
 			return balance;
 		}
 		return 0.0;
 	}
 	
 	public boolean depositMoney (Integer accountID, Double deposit) {
-		if (accounts.containsKey(accountID)) {
+		if (accounts.containsKey(accountID) && deposit >= 0.0) {
 			Double balance = accounts.get(accountID);
 			accounts.put(accountID, balance+deposit);
 			return true;
