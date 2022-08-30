@@ -2,8 +2,8 @@ import java.util.*;
 
 public class ATM {
 	HashMap<Integer, Double> accounts;
-	public ATM (HashMap<Integer, Double> accounts) {
-		this.accounts = accounts;
+	public ATM () {
+		this.accounts = new HashMap<Integer, Double>();
 		
 	}
 	
