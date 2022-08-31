@@ -11,11 +11,15 @@ public class ATM {
 	}
 	
 	public void openAccount (Integer accountID) {
-		accounts.put(accountID, 0.0);
+		if (!accounts.containsKey(accountID)) {
+			accounts.put(accountID, 0.0);
+		}	
 	}
 	
 	public void openAccount (Integer accountID, Double deposit) {
-		accounts.put(accountID, deposit);
+		if (!accounts.containsKey(accountID)) {
+			accounts.put(accountID, deposit);
+		}
 	}
 	
 	public void closeAccount (Integer accountID) {
